@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\userController;
+use App\Http\Controllers\Admin\adminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +23,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+//user
+Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lockBack']],function(){
+    Route::get('/', [userController::class, 'homeUser'])->name('user.home');
+    
+});
+
+//admin
+Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],function(){
+    Route::get('/', [adminController::class, 'homeAdmin'])->name('admin.home');
+ 
+});

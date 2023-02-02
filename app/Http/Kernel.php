@@ -64,5 +64,15 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         
+        //admin middleware added
+        'checkAdmin' => \App\Http\Middleware\checkAdmin::class,
+        //user middleware added
+        'checkUser' => \App\Http\Middleware\checkUser::class,
+        //Locked Back page
+        'lockBack' => \App\Http\Middleware\lockBackPage::class,
+
+
+
+        
     ];
 }
