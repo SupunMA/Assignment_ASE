@@ -21,7 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
+
+//Preventing go back
+Route::middleware(['middleware'=>'lockBack'])->group(function(){
+    Auth::routes();
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -37,3 +43,5 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
     Route::get('/', [adminController::class, 'homeAdmin'])->name('admin.home');
  
 });
+
+
