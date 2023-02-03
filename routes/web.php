@@ -46,3 +46,11 @@ Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],
 });
 
 
+//Disabled User Registration
+Route::get('/register', function() {
+    return redirect('/login');
+});
+
+Route::post('/register', function() {
+    return redirect('/login');
+});

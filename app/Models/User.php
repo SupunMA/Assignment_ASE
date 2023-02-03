@@ -21,7 +21,21 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role'
+        'role',
+
+        'nic',
+        'address',
+        'mobile',
+        'DOB',
+        'income',
+        'expenses',
+        'assets',
+        'liabilities',
+        'employment',
+        'bankName',
+        'accountNumber',
+        'accountBalance',
+        'loanPurpose'
     ];
 
     /**

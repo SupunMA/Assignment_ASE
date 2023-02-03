@@ -5,7 +5,7 @@
 <div class="container-fluid">
     @include('Profiles.Admin.Home.Components.smallBoxes')
     {{-- @include('Profiles.Admin.Home.Components.charts') --}}
-ytuytut
+
 </div>
 
 

@@ -45,7 +45,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{route('admin.home')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Main Window</p>
                 </a>
@@ -58,6 +58,31 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Clients
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.addClient')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Client</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Client Details</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a href="{{route('admin.addClient')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
