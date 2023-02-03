@@ -22,7 +22,6 @@ Route::get('/', function () {
 });
 
 
-
 //Preventing go back
 Route::middleware(['middleware'=>'lockBack'])->group(function(){
     Auth::routes();
