@@ -68,7 +68,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class="nav-link btn btn-danger">
             
             
               <form id="logout-form" action="{{ route('logout') }}" method="POST">
