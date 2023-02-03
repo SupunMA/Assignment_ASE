@@ -71,11 +71,11 @@
     
                     <div class="col-lg-6 col-12">
                         <div class="form-group">
-                            <label >Zip Code</label>
+                            <label >NIC</label>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control"
-                                    data-inputmask="'mask': ['99999']" data-mask
-                                    placeholder="Zip Code" name="zipCode">
+                                    data-inputmask="'mask': ['999999999']" data-mask
+                                    placeholder="nic" name="nic">
                                 
                             </div>
                         </div>
