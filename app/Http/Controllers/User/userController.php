@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class userController extends Controller
 {
     function homeUser(){
-        return view('User.home');
+        return view('Profiles.User.home');
     }
 }

@@ -9,6 +9,6 @@ use Illuminate\Http\Request;
 class adminController extends Controller
 {
     function homeAdmin(){
-        return view('Admin.home');
+        return view('Profiles.Admin.Home.home');
     }
 }
