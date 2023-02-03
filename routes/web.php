@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\userController;
 use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\Admin\admin_Client_Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
 //admin
 Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],function(){
     Route::get('/', [adminController::class, 'homeAdmin'])->name('admin.home');
+    Route::get('/AddClient', [admin_Client_Controller::class, 'addClient'])->name('admin.addClient');
  
 });
 
