@@ -83,7 +83,7 @@
             </ul>
           </li>
 
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{route('admin.addClient')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -92,8 +92,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+          <li class="nav-item"> --}}
+            <a href="#" class="nav-link btn btn-danger">
               
               
                 <form id="logout-form" action="{{ route('logout') }}" method="POST">
