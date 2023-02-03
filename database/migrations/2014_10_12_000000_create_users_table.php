@@ -15,27 +15,28 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('first name');
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('role')->default(0);
             $table->string('password');
 
-            $table->integer('nic');
-            $table->string('address');
-            $table->string('mobile');
-            $table->date('DOB');
-            $table->float('income',20,2);
-            $table->float('expenses',20,2);
-            $table->float('assets',25,2);
-            $table->float('liabilities',20,2);
-            $table->string('employment');
+            $table->integer('nic')->nullable();
+            $table->string('address')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('mobile')->nullable();
+            $table->date('DOB')->nullable();
+            $table->float('income',20,2)->nullable();
+            $table->float('expenses',20,2)->nullable();
+            $table->float('assets',25,2)->nullable();
+            $table->float('liabilities',20,2)->nullable();
+            $table->string('employment')->nullable();
 
-            $table->string('bankName');
-            $table->integer('accountNumber');
-            $table->string('accountBalance',25,2);
+            $table->string('bankName')->nullable();
+            $table->integer('accountNumber')->nullable();
+            $table->string('accountBalance',25,2)->nullable();
 
-            $table->string('loanPurpose');
+            $table->string('loanPurpose')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

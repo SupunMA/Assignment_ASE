@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -76,17 +78,27 @@ class RegisterController extends Controller
 
     function addingClient(Request $request)
     {
+        
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'gender' => ['required', 'string', 'in:M,F'],
-            'dob' => ['required', 'string', 'date','before:-13 years'],
-            'email' => ['string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'address' => ['string'],
-            'mobile' =>['string','unique:users'],
-            'zipCode'=>['integer'],
-            'joinDate'=> ['required', 'string', 'date'],
-            'refPlan'=>['required','integer']
+            // 'name' => ['required', 'string', 'max:255'],
+            // 'gender' => ['required', 'string', 'in:M,F'],
+            // 'dob' => ['required', 'string', 'date','before:-18 years'],
+            // 'email' => ['string', 'email', 'max:255', 'unique:users'],
+            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'address' => ['string'],
+            // 'mobile' =>['string','unique:users'],
+            // 'nic'=>['integer'],
+    
+
+            // 'income' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            // 'expenses' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            // 'assets' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            // 'liabilities' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            // 'employment' => 'required|string',
+            // 'accountNumber' => 'required',
+            // 'accountBalance' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+            // 'loanPurpose' => 'required|string',
+            
         ]);
 
         $user = new User();
@@ -97,12 +109,19 @@ class RegisterController extends Controller
 
         $user->mobile = $request->mobile;
         $user->address = $request->address;
-        $user->zipCode = $request->zipCode;
+        $user->nic = $request->nic;
         $user->dob = $request->dob;
-        $user->joinDate = $request->joinDate;
         $user->gender = $request->gender;
-        $user->refPlan = $request->refPlan;
         $user->role = $request->role;
+
+        $user->income = $request->income;
+        $user->expenses = $request->expenses; 
+        $user->assets = $request->assets;
+        $user->liabilities = $request->liabilities;
+        $user->employment = $request->employment;
+        $user->accountNumber = $request->accountNumber;
+        $user->accountBalance = $request->accountBalance;
+        $user->loanPurpose = $request->loanPurpose;
 
         if( $user->save() ){
             return redirect()->back()->with('message','successful');

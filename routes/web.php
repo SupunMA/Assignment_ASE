@@ -7,6 +7,7 @@ use App\Http\Controllers\User\userController;
 use App\Http\Controllers\Admin\adminController;
 use App\Http\Controllers\Admin\admin_Client_Controller;
 
+use App\Http\Controllers\Auth\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +43,7 @@ Route::group(['prefix'=>'Account/Client','middleware'=>['checkUser','auth','lock
 Route::group(['prefix'=>'Admin','middleware'=>['checkAdmin','auth','lockBack']],function(){
     Route::get('/', [adminController::class, 'homeAdmin'])->name('admin.home');
     Route::get('/AddClient', [admin_Client_Controller::class, 'addClient'])->name('admin.addClient');
+    Route::POST('/AddingClient', [RegisterController::class, 'addingClient'])->name('admin.addingClient');
  
 });
 
